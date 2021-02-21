@@ -5,10 +5,7 @@ module.exports = {
             process.env.NODE_ENV === 'production' ?
                     [
                         'postcss-flexbugs-fixes',
-                        'postcss-sort-media-queries',
-
-                        [
-                            'postcss-preset-env',
+                        ['postcss-preset-env',
                             {
                                 autoprefixer: {
                                     flexbox: 'no-2009',
@@ -20,13 +17,18 @@ module.exports = {
                                 },
                             },
                         ],
+                        ['postcss-sort-media-queries', {sort: sortCSSmq,}],
+                        ['cssnano', {
+                            preset: ['default', {
+                                discardComments: {
+                                    removeAll: true
+                                }
+                            }]
+                        }]
                     ] :
                     [
                         'postcss-flexbugs-fixes',
-                        'postcss-sort-media-queries',
-
-                        [
-                            'postcss-preset-env',
+                        ['postcss-preset-env',
                             {
                                 autoprefixer: {
                                     flexbox: 'no-2009',
@@ -38,5 +40,7 @@ module.exports = {
                                 },
                             },
                         ],
+                        ['postcss-sort-media-queries', {sort: sortCSSmq,}],
                     ],
+
 }
