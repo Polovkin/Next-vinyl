@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import {MainLayout} from "../layouts/MainLayout";
+import {MainLayout} from "../layouts/main/MainLayout";
 
 export default function ErrorPage() {
     return (

@@ -16,7 +16,7 @@
   height: $height;
 }
 
-// z-index
+// z-styles
 @function z($name, $z-indexes-list: $z-indexes) {
   @if index($z-indexes-list, $name) {
     @return (length($z-indexes-list) - index($z-indexes-list, $name)) + 1;

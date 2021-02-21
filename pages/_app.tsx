@@ -1,4 +1,3 @@
-
 import '../assets/scss/_app.scss'
 import NextNprogress from 'nextjs-progressbar';
 

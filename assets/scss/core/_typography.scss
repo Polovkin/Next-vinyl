@@ -1,7 +1,9 @@
 /*@each $name, $weight, $style in $font__types {
   @include font-face($font__family, $font__path+$name, $weight, $style, $font__ext);
 }*/
-
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 html {
 
   height: 100%;
