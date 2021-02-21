@@ -1,0 +1,19 @@
+.title {
+  color: $color__font--primary;
+   @include breakpoint ($phone__all) {
+       color: #2fff00;
+    }
+}
+.test {
+  color: red;
+}
+.wrap {
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto;
+  &--hover {
+    color: #2fff00;
+  }
+}
