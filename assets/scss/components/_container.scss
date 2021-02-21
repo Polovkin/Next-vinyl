@@ -1,0 +1,71 @@
+@mixin min($bp, $max: 'null', $device: 'screen') {
+  @if $max == 'null' {
+    @media only #{$device} and (min-width: #{$bp}) {
+      @content;
+    }
+  } @else {
+    @media only #{$device} and (min-width: #{$bp}) and (max-width: #{$max}) {
+      @content;
+    }
+  }
+}
+
+@function bp($bp) {
+  @return map-get($breakpoints, $bp);
+}
+
+$breakpoints: (
+  na: $width__min,
+        xs: $width__mobile-min,
+        sm: $width__tablet-port ,
+        md: $width__tablet-land ,
+        lg: $width__laptop-min ,
+        xl: $width__desktop-hd-min,
+        xxl: $width__desktop-hd + 1,
+);
+
+@function container($container-size, $true-val: false) {
+  @return map-get($container-sizes, $container-size);
+}
+
+$container-sizes: (
+  sm: map-get($breakpoints, sm) - 28px,
+  md: map-get($breakpoints, md) - 54px,
+  lg: map-get($breakpoints, lg) - 100px,
+  xl: map-get($breakpoints, xl) - 160px,
+  xxl: map-get($breakpoints, xxl) - 160px
+);
+
+.container {
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  &:not(.is-fluid) {
+
+    @each $bp, $container-size in $container-sizes {
+      @include min(#{bp(#{$bp})}) {
+        width: 100%;
+        max-width: container(#{$bp});
+      }
+    }
+    margin: 0 auto;
+  }
+}
+
+@each $bp, $container-size in $container-sizes {
+  .container-#{$bp} {
+
+    $i: index($container-sizes, $bp $container-size);
+
+    @for $j from $i through length($container-sizes) {
+      @include min(#{bp(nth(nth($container-sizes, $j), 1))}) {
+        max-width: container(#{nth(nth($container-sizes, $j), 1)});
+      }
+    }
+    width: 100%;
+
+    margin: 0 auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
