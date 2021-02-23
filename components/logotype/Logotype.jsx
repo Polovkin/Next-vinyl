@@ -1,20 +1,20 @@
 import logotypeStyle from "./logotype.module.scss";
 
 import Image from 'next/image'
+import {Link} from "../../i18n";
 
 const Logotype = () => (
         <>
             <div className={logotypeStyle.logotype}>
-                <div className={logotypeStyle.img}>
-                    <Image
-                            objectFit={"contain"}
-                            src="/img/1.png"
-                            alt="Picture of the author"
-                            width={200}
-                            height={200}
-                    />
-                </div>
-
+                <Link href='/'>
+                    <a className={logotypeStyle.link}>
+                        <Image
+                                height={43}
+                                width={157}
+                                src="/icons/logotype.svg"
+                        />
+                    </a>
+                </Link>
             </div>
         </>
 )

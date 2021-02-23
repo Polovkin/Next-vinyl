@@ -1,8 +1,14 @@
+$animation_duration: .2s;
+
 .logotype {
   max-width: 200px;
 }
-.img {
+.link {
+  display: flex;
   position: relative;
-  width: 200px;
-  height: 200px;
+  padding: 10px;
+  transition: all $animation_duration ease-in;
+  &:hover {
+    transform: scale(1.02);
+  }
 }

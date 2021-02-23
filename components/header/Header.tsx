@@ -3,6 +3,7 @@ import {i18n, Link, withTranslation} from '../../i18n'
 import LangSwitcher from '../langSwitcher/LangSwitcher'
 import Logotype from '../logotype/Logotype'
 import style from './header.module.scss'
+import Navigation from "../navigation/Navigation";
 
 const Header = ({t}) => {
     return (
@@ -10,6 +11,7 @@ const Header = ({t}) => {
             <header className={style.header}>
                 <Logotype/>
                 <LangSwitcher/>
+                <Navigation/>
             </header>
         </>
     )

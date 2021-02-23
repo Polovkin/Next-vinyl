@@ -3,6 +3,7 @@ import {i18n, Link, withTranslation} from '../i18n'
 import {MainLayout} from "../layouts/MainLayout";
 import Header from "../components/header/Header";
 
+import Image from 'next/image'
 
 const Homepage = ({t}) => (
     <>
@@ -13,6 +14,10 @@ const Homepage = ({t}) => (
                         {t('about')}
                     </button>
                 </Link>
+                <div className="img-wrap">
+
+                </div>
+
             </div>
 
         </MainLayout>
