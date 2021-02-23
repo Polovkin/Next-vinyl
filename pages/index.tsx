@@ -1,21 +1,15 @@
 import PropTypes from 'prop-types'
 import {i18n, Link, withTranslation} from '../i18n'
-import Header from '../components/Header'
+
 import Footer from '../components/Footer'
+import Header from "../components/Header";
 
 const Homepage = ({t}) => (
     <>
         <main>
-            <Header title={t('h1')}/>
+           <Header title={'header'}/>
             <div>
 
-                <button
-                    type='button'
-                    onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en')}
-                >
-
-                    {t('change-locale')}
-                </button>
                 <Link href='/second-page'>
                     <button
                         type='button'
@@ -30,7 +24,7 @@ const Homepage = ({t}) => (
 )
 
 Homepage.getInitialProps = async () => ({
-    namespacesRequired: ['common', 'footer'],
+    namespacesRequired: ['common'],
 })
 
 Homepage.propTypes = {
