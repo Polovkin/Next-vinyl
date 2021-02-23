@@ -7,7 +7,6 @@ import Header from "../components/header/Header";
 const Homepage = ({t}) => (
     <>
         <MainLayout>
-
             <div>
                 <Link href='/about'>
                     <button type='button'>

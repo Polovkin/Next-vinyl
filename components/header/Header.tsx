@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types'
 import {i18n, Link, withTranslation} from '../../i18n'
-import LangSwitcher from '../LangSwitcher/LangSwitcher'
+import LangSwitcher from '../langSwitcher/LangSwitcher'
+import Logotype from '../logotype/Logotype'
 import style from './header.module.scss'
 
 const Header = ({t}) => {
     return (
         <>
             <header className={style.header}>
-                <div className="logo">
-                    {t('h12')}
-                </div>
+                <Logotype/>
                 <LangSwitcher/>
             </header>
         </>
