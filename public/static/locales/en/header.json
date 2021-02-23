@@ -1,3 +1,6 @@
 {
-  "h12": "test"
+  "h12": "test",
+  "navigation-stock": "Stocks",
+  "navigation-about": "About",
+  "navigation-contacts": "Contacts"
 }

@@ -1,36 +1,40 @@
+import PropTypes from 'prop-types'
 import {i18n, Link, withTranslation} from '../../i18n'
 import style from './navigation.module.scss'
 
 
-
-const Navigation = () =>{
-    const items = [
+const Navigation = ({t}) => {
+    const navLinks = [
         {
-            text: 'Акции',
-            link: '/act',
+            text: t('navigation-stock'),
+            link: '/stock',
         },
         {
-            text: 'О нас',
+            text: t('navigation-about'),
             link: '/about'
         },
         {
-            text: 'Контакты',
+            text: t('navigation-contacts'),
             link: '/contacts'
         },
     ]
     return (
-            <>
-                <nav className={`${style.navigation}`}>
-                    {items.map((item, index) =>
-                            <li key={index}>
-                                <Link href={item.link}>
-                                    <a>{item.text}</a>
-                                </Link>
-                            </li>
-                    )}
-                </nav>
-            </>
+        <>
+            <nav className={`${style.navigation}`}>
+                {navLinks.map((item, index) =>
+                    <li className={style.link}
+                        key={index}>
+                        <Link href={item.link}>
+                            <a>{item.text}</a>
+                        </Link>
+                    </li>
+                )}
+            </nav>
+        </>
     )
 }
 
-export default Navigation
+Navigation.propTypes = {
+    t: PropTypes.func.isRequired,
+}
+export default withTranslation('header')(Navigation)

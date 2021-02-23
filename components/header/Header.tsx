@@ -9,9 +9,11 @@ const Header = ({t}) => {
     return (
         <>
             <header className={style.header}>
+
                 <Logotype/>
-                <LangSwitcher/>
                 <Navigation/>
+                <LangSwitcher/>
+
             </header>
         </>
     )
