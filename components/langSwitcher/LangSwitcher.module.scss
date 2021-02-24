@@ -4,7 +4,8 @@
 
 .item {
   cursor: pointer;
-  color: red;
+  color: $color__font--secondary;
+  font-size: 13px;
   padding: 5px;
-  margin: 5px;
+  display: flex;
 }

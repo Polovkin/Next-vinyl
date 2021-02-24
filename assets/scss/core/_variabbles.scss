@@ -1,18 +1,22 @@
 $font__line-height: auto;
 $font__size: 18px;
 $font__weight: normal;
-$font__family: 'SourceCodePro';
+$font__family: 'Geometria';
 $font__style: sans-serif;
-$font__file-name: 'SourceCodePro-';
-$font__path: '~@/assets/fonts/#{$font__file-name}';
+$font__file-name: $font__family + '-';
+$font__path: '/fonts/#{$font__family}/#{$font__file-name}';
 $font__ext: (woff2, woff);
 $font__types: (
-                ('Light', 300, normal),
-                ('Bold', bold, normal),
+                ('ExtraBold', 800, normal),
                 ('Regular', normal, normal),
+                ('Medium', 500, normal),
+                ('Bold', bold, normal),
+                ('Light', 300, normal),
+                ('Thin', 100, normal),
+                ('Heavy', 900, normal),
 );
 
-$header_height: 60px;
+$header_height: 150px;
 $input__font-size: $font__size;
 $input__font-color: $color__font--primary;
 $input__placeholder-color: gray;

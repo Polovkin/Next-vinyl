@@ -20,7 +20,7 @@ const Navigation = ({t}) => {
     ]
     return (
         <>
-            <nav className={`${style.navigation}`}>
+            <nav className={`${style.wrap}`}>
                 {navLinks.map((item, index) =>
                     <li className={style.link}
                         key={index}>

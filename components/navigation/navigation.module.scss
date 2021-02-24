@@ -1,10 +1,15 @@
-.navigation {
-display: flex;
+.wrap {
+  display: flex;
 }
 
 .link {
   margin: 5px;
-  &:hover {
-    text-decoration: underline;
+
+  a {
+    color: $color__font--secondary;
   }
+  &:hover {
+      text-decoration: underline;
+  }
+
 }

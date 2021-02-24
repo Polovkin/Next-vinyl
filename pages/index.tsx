@@ -1,24 +1,21 @@
 import PropTypes from 'prop-types'
 import {i18n, Link, withTranslation} from '../i18n'
 import {MainLayout} from "../layouts/MainLayout";
-import Header from "../components/header/Header";
-
+import main from './main.module.scss'
 import Image from 'next/image'
 
 const Homepage = ({t}) => (
     <>
         <MainLayout>
-            <div>
+            <section className={`section ${main['main-section']}`}>
                 <Link href='/about'>
                     <button type='button'>
                         {t('about')}
                     </button>
                 </Link>
-                <div className="img-wrap">
+                <h1>Test</h1>
 
-                </div>
-
-            </div>
+            </section>
 
         </MainLayout>
     </>

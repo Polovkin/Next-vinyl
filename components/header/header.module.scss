@@ -1,6 +1,24 @@
-.header {
+%bar-flex {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: $header_height;
+
+}
+
+.top-bar {
+  height: 50px;
+  background-color: $color__secondary;
+  @extend %bar-flex;
+}
+
+.bottom-bar {
+  @extend %bar-flex;
+}
