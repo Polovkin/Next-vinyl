@@ -14,9 +14,7 @@ const Homepage = ({t}) => (
                     </button>
                 </Link>
                 <h1>Test</h1>
-
             </section>
-
         </MainLayout>
     </>
 )

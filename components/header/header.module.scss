@@ -13,12 +13,22 @@
 
 }
 
-.top-bar {
+.top_bar {
   height: 50px;
   background-color: $color__secondary;
   @extend %bar-flex;
 }
 
-.bottom-bar {
+.bottom_bar {
   @extend %bar-flex;
 }
+
+.test1 {
+  color: red;
+
+  .test2 {
+    color: green;
+  }
+
+}
+
