@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import { withTranslation, Link } from '../i18n'
 import { MainLayout } from '../layouts/MainLayout'
-
 const About = ({ t }) => (
   <>
     <MainLayout>

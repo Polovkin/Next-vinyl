@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { Link, withTranslation } from '../i18n'
 import { MainLayout } from '../layouts/MainLayout'
-import main from './main.module.scss'
+import main from './styles/main.module.scss'
 
 const Homepage = ({ t }) => (
   <>
