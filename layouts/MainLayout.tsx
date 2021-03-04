@@ -6,14 +6,12 @@ import { HeaderProvider } from '../components/header/HeaderCondext'
 export const MainLayout = ({ children, title = 'Next app' }) => {
   return (
     <>
-      <HeaderProvider>
-        <Head>
-          <title>{title} | Next course</title>
-        </Head>
-        <Header />
+      <Head>
+        <title>{title} | Next course</title>
+      </Head>
+      <Header />
 
-        <main className={style.main}>{children}</main>
-      </HeaderProvider>
+      <main className={style.main}>{children}</main>
     </>
   )
 }

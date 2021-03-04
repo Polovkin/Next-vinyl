@@ -9,6 +9,7 @@ import { useHeader } from './HeaderCondext'
 const Header = () => {
   const number = '+1234567890'
   const menuState = useHeader()
+
   return (
     <>
       <header className={s.header}>
@@ -27,7 +28,7 @@ const Header = () => {
         <div className={`${s.bottom_bar} container is-fluid`}>
           <Logotype />
         </div>
-        <div className={`${s.menu} ${menuState ?? s.menu_visible}`}> test menu</div>
+        {/* <div className={`${s.menu} ${menuState ?? s.menu_visible}`}> test menu</div>*/}
       </header>
     </>
   )

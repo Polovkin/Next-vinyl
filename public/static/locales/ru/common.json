@@ -3,5 +3,6 @@
   "change-locale": "Сменить язык",
   "to-second-page": "На другую станицу",
   "error-with-status": "{{statusCode}} ошибка с сервера",
-  "error-without-status": "Ошибка"
+  "error-without-status": "Ошибка",
+  "about-link": "Подробнее"
 }
