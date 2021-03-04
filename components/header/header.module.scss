@@ -1,34 +1,65 @@
 %bar-flex {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  display: flex;
 }
 
 .header {
-  display: flex;
   flex-direction: column;
+
   position: fixed;
+
+  display: flex;
   width: 100%;
   height: $header_height;
 
 }
 
 .top_bar {
-  height: 50px;
-  background-color: $color__secondary;
   @extend %bar-flex;
+  height: 50px;
+
+  background-color: $color__secondary;
 }
 
 .bottom_bar {
   @extend %bar-flex;
 }
 
-.test1 {
-  color: red;
+.wrapper {
+  align-items: center;
 
-  .test2 {
-    color: green;
+  display: flex;
+}
+
+.phone {
+  align-items: center;
+
+  display: flex;
+
+  color: $color__font--secondary;
+
+  &:before {
+    //@include pseudoElement(20px, 'phone.svg');
+    position: relative;
+
+    margin-right: 1rem;
   }
+}
+
+.menu {
+  padding: 5px;
+
+  background-color: red;
+
+  color: white;
+
+  opacity: 0;
+
 
 }
 
+.menu_visible {
+  opacity: 1;
+}
