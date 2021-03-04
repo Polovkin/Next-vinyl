@@ -19,14 +19,22 @@ const Navigation = ({ t }) => {
   ]
   return (
     <>
-      <nav className={`${style.wrap}`}>
-        {navLinks.map((item, index) => (
-          <li className={style.link} key={index}>
-            <Link href={item.link}>
-              <a>{item.text}</a>
-            </Link>
-          </li>
-        ))}
+      <nav className={style.content}>
+        <div className={style.dropdown}>
+          <button className={style.button}>
+            {t('navigation-dropdown')}
+            <span className={style.cross} />
+          </button>
+        </div>
+        <ul className={`${style.list}`}>
+          {navLinks.map((item, index) => (
+            <li className={style.link} key={index}>
+              <Link href={item.link}>
+                <a>{item.text}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
     </>
   )

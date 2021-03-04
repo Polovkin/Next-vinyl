@@ -33,6 +33,12 @@
   display: flex;
 }
 
+.contacts {
+  align-items: center;
+
+  display: flex;
+}
+
 .phone {
   align-items: center;
 
@@ -41,10 +47,20 @@
   color: $color__font--secondary;
 
   &:before {
-    //@include pseudoElement(20px, 'phone.svg');
+    @include pseudoElement(15px, 'phone.svg');
     position: relative;
 
-    margin-right: 1rem;
+    margin-right: 5px;
+  }
+}
+
+.email {
+  @extend .phone;
+  margin: 0 2rem;
+
+  &:before {
+    @include pseudoElement(20px, 'email.svg');
+    position: relative;
   }
 }
 

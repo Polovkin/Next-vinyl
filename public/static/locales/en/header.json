@@ -2,5 +2,6 @@
   "h12": "test",
   "navigation-stock": "Stocks",
   "navigation-about": "About",
-  "navigation-contacts": "Contacts"
+  "navigation-contacts": "Contacts",
+  "navigation-dropdown": "Catalog"
 }

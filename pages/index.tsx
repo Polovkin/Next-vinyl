@@ -6,7 +6,6 @@ import { useHeader } from '../components/header/HeaderCondext'
 
 const Homepage = ({ t }) => {
   const menuState = useHeader()
-  console.log(menuState)
   return (
     <>
       <MainLayout>
@@ -23,7 +22,7 @@ const Homepage = ({ t }) => {
 }
 
 Homepage.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
+  namespacesRequired: ['common', 'header'],
 })
 
 Homepage.propTypes = {

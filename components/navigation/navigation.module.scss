@@ -1,15 +1,68 @@
-.wrap {
+.content {
+  align-items: center;
+
   display: flex;
+  height: 100%;
+}
+
+.dropdown {
+  height: 100%;
+
+  margin-right: 1rem;
+
+  color: $color__font--secondary;
+
+}
+
+.button {
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+
+  display: flex;
+
+  height: inherit;
+
+  padding: 0 15px;
+
+  font-size: 14px;
+  line-height: 22px;
+
+}
+
+.cross {
+  @include css-triangle($color__light,down,5px);
+  position: relative;
+  left: 13px;
+  top: 2px;
+}
+
+.list {
+  display: flex;
+  height: inherit;
 }
 
 .link {
-  margin: 5px;
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+
+  padding: 0 15px;
 
   a {
+    display: block;
+    height: inherit;
+
     color: $color__font--secondary;
   }
+
   &:hover {
-      text-decoration: underline;
+    text-decoration: underline;
   }
 
 }
+
+
+
