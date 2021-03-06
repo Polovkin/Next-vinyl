@@ -1,0 +1,54 @@
+input {
+  box-shadow: none;
+
+  color: inherit;
+  font-size: inherit;
+
+  outline: none;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:hover {
+    box-shadow: 0 0 0 1000px #fff inset !important;
+  }
+
+  &[type='button']:hover,
+  &[type='reset']:hover,
+  &[type='submit']:hover,
+  &[type='button']:active,
+  &[type='button']:focus,
+  &[type='reset']:active,
+  &[type='reset']:focus,
+  &[type='submit']:active,
+  &[type='submit']:focus {
+    outline: 0;
+  }
+
+  &[type='text'],
+  &[type='email'],
+  &[type='url'],
+  &[type='password'],
+  &[type='search'],
+  &[type='number'],
+  &[type='tel'],
+  &[type='range'],
+  &[type='date'],
+  &[type='month'],
+  &[type='week'],
+  &[type='time'],
+  &[type='datetime'],
+  &[type='datetime-local'],
+  &[type='color'] {
+    width: 100%;
+
+    outline: 0;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &::placeholder {
+    color: $input__placeholder-color;
+  }
+}

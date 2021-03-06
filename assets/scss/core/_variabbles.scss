@@ -7,19 +7,27 @@ $font__file-name: $font__family + '-';
 $font__path: '/fonts/#{$font__family}/#{$font__file-name}';
 $font__ext: (woff2, woff);
 $font__types: (
-                ('ExtraBold', 800, normal),
-                ('Regular', normal, normal),
-                ('Medium', 500, normal),
-                ('Bold', bold, normal),
-                ('Light', 300, normal),
-                ('Thin', 100, normal),
-                ('Heavy', 900, normal),
+  ('ExtraBold', 800, normal),
+  ('Regular', normal, normal),
+  ('Medium', 500, normal),
+  ('Bold', bold, normal),
+  ('Light', 300, normal),
+  ('Thin', 100, normal),
+  ('Heavy', 900, normal),
 );
 
+
 $header_height: 150px;
-$input__font-size: $font__size;
-$input__font-color: $color__font--primary;
-$input__placeholder-color: gray;
+
+// ==INPUTS==
 $input_height: 50px;
+
+$input__font_size: 16px;
+$input__font_color: $color__font--primary;
+$input__placeholder_color: #808080;
+
+$input__error: #f00;
+$input__valid: #008000;
+$input__border: #000;
 
 $img_path: '~assets/img'

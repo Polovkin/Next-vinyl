@@ -1,0 +1,25 @@
+form {
+
+  label {
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+
+    color: $color__font--primary;
+    font-family: $font__family;
+    font-size: rem($font__size);
+
+    outline: 0;
+
+    resize: none;
+  }
+}
+label {
+
+  display: block;
+
+  color: $input__font-color;
+  font-size: $input__font-size;
+}

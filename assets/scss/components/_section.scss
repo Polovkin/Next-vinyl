@@ -1,0 +1,14 @@
+$section_paddings: (80px, 60px, 40px, 20px);
+
+.section {
+  padding: nth($section_paddings, 1) 0;
+  @include breakpoint($desktop__laptop) {
+    padding: nth($section_paddings, 2) 0;
+  }
+  @include breakpoint($tablet__all) {
+    padding: nth($section_paddings, 3) 0;
+  }
+  @include breakpoint($phone__all) {
+    padding: nth($section_paddings, 4) 0;
+  }
+}

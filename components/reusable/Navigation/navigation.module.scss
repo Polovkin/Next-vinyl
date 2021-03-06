@@ -1,3 +1,9 @@
+%link-style {
+  color: $color__font--secondary;
+  font-size: 14px;
+  line-height: 22px;
+}
+
 .content {
   align-items: center;
 
@@ -9,12 +15,10 @@
   height: 100%;
 
   margin-right: 1rem;
-
-  color: $color__font--secondary;
-
 }
 
 .button {
+  @extend %link-style;
   align-items: center;
   justify-content: space-between;
 
@@ -25,17 +29,13 @@
   height: inherit;
 
   padding: 0 15px;
-
-  font-size: 14px;
-  line-height: 22px;
-
 }
 
-.cross {
+.triangle {
   @include css-triangle($color__light,down,5px);
   position: relative;
-  left: 13px;
   top: 2px;
+  left: 13px;
 }
 
 .list {
@@ -44,6 +44,7 @@
 }
 
 .link {
+
   align-items: center;
   justify-content: center;
 
@@ -52,10 +53,9 @@
   padding: 0 15px;
 
   a {
+    @extend %link-style;
     display: block;
     height: inherit;
-
-    color: $color__font--secondary;
   }
 
   &:hover {

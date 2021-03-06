@@ -1,9 +1,11 @@
 @each $name, $weight, $style in $font__types {
   @include font-face($font__family, $font__path+$name, $weight, $style, $font__ext);
 }
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
 html {
 
   height: 100%;
@@ -67,9 +69,10 @@ li {
 a {
   color: $color__font--primary;
   font-size: 14px;
+  letter-spacing: -.002em;
   line-height: 22px;
   text-decoration: none;
-  letter-spacing: -0.002em;
+
   transition: .3s;
 
   &:hover,
