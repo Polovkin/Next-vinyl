@@ -1,0 +1,87 @@
+%messenger {
+  @include size(60px);
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+
+  margin-right: 1rem;
+
+  border-radius: 20px;
+
+  background-color: $color__secondary;
+  &:hover {
+    @include contact_button_hover;
+  }
+}
+
+.wrap {
+  display: flex;
+}
+
+.schedule {
+  flex-direction: column;
+  justify-content: center;
+
+  display: flex;
+
+  padding: 0 2rem;
+}
+
+.buttons {
+  display: flex;
+}
+
+.graphic {
+  color: $color__font--secondary;
+  font-size: 12px;
+  line-height: 22px;
+
+  opacity: .5;
+}
+
+.time {
+  color: $color__font--secondary;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+
+}
+
+.telegram {
+  @extend %messenger;
+
+  &:after {
+    @include pseudoElement(24px, 'telegram.svg');
+    position: relative;
+    top: 2px;
+    left: -1px;
+  }
+
+}
+
+.viber {
+  @extend %messenger;
+
+  &:after {
+    @include pseudoElement(28px, 'viber.svg');
+    position: relative;
+  }
+
+}
+
+.call {
+  min-width: 200px;
+  padding: 0 25px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(204.76deg, $color__primary 11.31%, #4622f5 153.78%);
+  box-shadow: 0 0 10px rgba(187, 35, 232, .4);
+
+  color: $color__font--secondary;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}

@@ -26,6 +26,22 @@
 
 .bottom_bar {
   @extend %bar-flex;
+  position: relative;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &:after {
+    @include pseudoElement(calc(100vw - 2rem));
+    left: 50%;
+    bottom: 0;
+    height: 1px;
+
+    background-color: $color__dark;
+
+    transform: translateX(-50%);
+    opacity: .1;
+  }
 }
 
 .wrapper {

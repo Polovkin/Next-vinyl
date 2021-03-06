@@ -11,7 +11,7 @@ const Logotype = () => (
                         <Image
                                 height={43}
                                 width={157}
-                                src="/icons/logotype.svg"
+                                src="/icons/logotype-light.svg"
                         />
                     </a>
                 </Link>
