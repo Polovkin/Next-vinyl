@@ -1,0 +1,101 @@
+%reset {
+  margin: 0;
+  padding: 0;
+
+  font-size: $input__font_size;
+
+  outline: none;
+  border: {
+    bottom: 2px solid $input__border;
+    radius: 0;
+    left: {
+      width: 0;
+
+      color: transparent;
+    }
+    right: {
+      width: 0;
+
+      color: transparent;
+    };
+    top: {
+      width: 0;
+
+      color: transparent;
+    };
+  };
+
+}
+@keyframes shake {
+
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding-top: 150px;
+}
+
+.label {
+  display: grid;
+  width: 100%;
+
+  color: $input__font-color;
+  grid: {
+    template: {
+      areas: 'placeholder' 'input' 'error';
+      rows: 20px $input_height 25px;
+    };
+  }
+}
+
+.placeholder {
+  color: $input__placeholder_color;
+
+  transform: translate(0, $input_height / 1.5) scale(1);
+  transform-origin: left;
+
+  transition: all .3s ease-in;
+  grid-area: placeholder;
+  &Animate {
+    color: $input__font_color;
+
+    transform: translate(0) scale(.7);
+  }
+}
+.input {
+  @extend %reset;
+  height: $input_height;
+
+  color: $input__font_color;
+  grid-area: input;
+}
+
+.error {
+  align-items: center;
+
+  display: flex;
+
+  color: $input__error;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+  grid-area: error;
+}

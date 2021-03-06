@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { i18n, Link, withTranslation } from '../../../i18n'
+import { Link, withTranslation } from '../../../i18n'
 import style from './navigation.module.scss'
 
 const Navigation = ({ t }) => {
@@ -23,7 +23,7 @@ const Navigation = ({ t }) => {
         <div className={style.dropdown}>
           <button className={style.button}>
             {t('navigation-dropdown')}
-            <span className={style.cross} />
+            <span className={style.triangle} />
           </button>
         </div>
         <ul className={`${style.list}`}>
