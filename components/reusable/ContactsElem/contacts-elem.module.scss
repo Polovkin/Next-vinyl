@@ -18,6 +18,9 @@
 
 .wrap {
   display: flex;
+  @include ie11() {
+    margin-left: auto;
+  }
 }
 
 .schedule {
