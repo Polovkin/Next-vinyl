@@ -7,8 +7,8 @@ const ContactsElem = ({ t }) => {
     <>
       <div className={s.wrap}>
         <div className={s.schedule}>
-          <p className={s.graphic}>График работы</p>
-          <p className={s.time}>Пд-Пт 10:00 – 21:00</p>
+          <p className={s.graphic}>{t('contact-graphic')}</p>
+          <p className={s.time}>{t('contact-time')}</p>
         </div>
         <div className={s.buttons}>
           <button className={s.telegram} />
