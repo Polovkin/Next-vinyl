@@ -1,7 +1,7 @@
-import { withTranslation } from '../../i18n'
-import LangSwitcher from '../langSwitcher/LangSwitcher'
-import Logotype from '../logotype/Logotype'
-import Navigation from '../navigation/Navigation'
+import { withTranslation } from '../../../i18n'
+import LangSwitcher from '../../reusable/LangSwitcher/LangSwitcher'
+import Logotype from '../../reusable/Logotype/Logotype'
+import Navigation from '../../reusable/Navigation/Navigation'
 import Image from 'next/image'
 import s from './header.module.scss'
 

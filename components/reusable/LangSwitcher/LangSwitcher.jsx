@@ -1,4 +1,4 @@
-import {i18n, Link, withTranslation} from '../../i18n'
+import {i18n, Link, withTranslation} from '../../../i18n'
 import style from './LangSwitcher.module.scss'
 
 export default function LangSwitcher ()  {

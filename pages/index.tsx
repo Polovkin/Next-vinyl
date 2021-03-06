@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { Link, withTranslation } from '../i18n'
 import { MainLayout } from '../layouts/MainLayout'
 import main from './styles/main.module.scss'
-import { useHeader } from '../components/header/HeaderCondext'
+import { useHeader } from '../components/Layout/Header/HeaderCondext'
 
 const Homepage = ({ t }) => {
   const menuState = useHeader()

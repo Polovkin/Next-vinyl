@@ -1,7 +1,7 @@
 import App from 'next/app'
 import '../assets/scss/_app.scss'
 import { appWithTranslation } from '../i18n'
-import { HeaderProvider } from '../components/header/HeaderCondext'
+import { HeaderProvider } from '../components/Layout/Header/HeaderCondext'
 
 const MyApp = ({ Component, pageProps }) => {
   return (

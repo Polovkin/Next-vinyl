@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { i18n, Link, withTranslation } from '../../i18n'
+import { i18n, Link, withTranslation } from '../../../i18n'
 import style from './navigation.module.scss'
 
 const Navigation = ({ t }) => {
