@@ -29,11 +29,11 @@
 
 // List
 $z-indexes: (
+  'modal',
   'header',
   'top-content',
   'content',
-  'bg-content',
-  'footer'
+  'bg-content'
 );
 
 @function is-direction($value) {
