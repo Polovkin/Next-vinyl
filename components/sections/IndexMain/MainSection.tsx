@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import { Link, withTranslation } from '../../../i18n'
-import s from './main.module.scss'
+import { withTranslation } from '../../../i18n'
 import { useHeader } from '../../Layout/Header/HeaderCondext'
 import { useState } from 'react'
+import s from './main.module.scss'
 
 const MainSection = ({ t }) => {
   const [input, setInput] = useState()
@@ -11,14 +11,9 @@ const MainSection = ({ t }) => {
   return (
     <>
       <section className={`section ${s.mainSection}`}>
-        <Link href="/about">
-          <button type="button">{t('about-link')}</button>
-        </Link>
-        <h1 className={`${menuState.visible ? 'eblo' : 'huilo'}`}>
-          {menuState.visible ? 'eblo' : 'huilo'}
-        </h1>
-        <button onClick={menuState.hide}>hide</button>
-        <button onClick={menuState.show}>show</button>
+        <div className={s.content}>
+          <h1>Test</h1>
+        </div>
       </section>
     </>
   )

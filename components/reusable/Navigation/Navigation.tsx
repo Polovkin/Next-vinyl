@@ -1,34 +1,34 @@
 import PropTypes from 'prop-types'
 import { Link, withTranslation } from '../../../i18n'
-import style from './navigation.module.scss'
+import s from './navigation.module.scss'
 
 const Navigation = ({ t }) => {
   const navLinks = [
     {
       text: t('navigation-stock'),
-      link: '/stock',
+      link: '#',
     },
     {
       text: t('navigation-about'),
-      link: '/about',
+      link: '#',
     },
     {
       text: t('navigation-contacts'),
-      link: '/contacts',
+      link: '#',
     },
   ]
   return (
     <>
-      <nav className={style.content}>
-        <div className={style.dropdown}>
-          <button className={style.button}>
+      <nav className={s.content}>
+        <div className={s.dropdown}>
+          <button className={s.button}>
             {t('navigation-dropdown')}
-            <span className={style.triangle} />
+            <span className={s.triangle} />
           </button>
         </div>
-        <ul className={`${style.list}`}>
+        <ul className={`${s.list}`}>
           {navLinks.map((item, index) => (
-            <li className={style.link} key={index}>
+            <li className={s.link} key={index}>
               <Link href={item.link}>
                 <a>{item.text}</a>
               </Link>

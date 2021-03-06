@@ -1,3 +1,4 @@
+
 %link-style {
   color: $color__font--secondary;
   font-size: 14px;
@@ -32,7 +33,7 @@
 }
 
 .triangle {
-  @include css-triangle($color__light,down,5px);
+  @include css-triangle($color__light, down, 5px);
   position: relative;
   top: 2px;
   left: 13px;
@@ -44,24 +45,63 @@
 }
 
 .link {
-
   align-items: center;
   justify-content: center;
 
+  position: relative;
+
   display: flex;
+
 
   padding: 0 15px;
 
+  cursor: pointer;
+
+  &:after {
+    @include breakpoint($desktop__all) {
+      @include pseudoElement(100%);
+      bottom: 0;
+
+      height: 3px;
+
+      border-radius: 5px 5px 0 0;
+
+      background-color: #b03adc;
+      box-shadow: 0 0 10px #ac39dd;
+
+      opacity: 0;
+
+      transition: width ease .2s;
+    }
+
+  }
+
   a {
     @extend %link-style;
+    position: relative;
+
     display: block;
     height: inherit;
+
+  }
+
+  &:active {
+
+    a {
+      top: 1px;
+    }
+
+    &:after {
+      width: 105%;
+    }
   }
 
   &:hover {
-    text-decoration: underline;
-  }
 
+    &:after {
+      @include navigation_link_hover;
+    }
+  }
 }
 
 

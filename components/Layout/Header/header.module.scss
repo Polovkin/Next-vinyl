@@ -9,6 +9,7 @@
   flex-direction: column;
 
   position: fixed;
+  z-index: z(header);
 
   display: flex;
   width: 100%;

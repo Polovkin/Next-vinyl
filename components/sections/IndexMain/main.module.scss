@@ -1,7 +1,23 @@
 .mainSection {
+  position: relative;
+
   min-height: 100vh;
 
   padding-top: $header_height;
 
-  background: radial-gradient(140.09% 139.62% at 57.93% -35.69%, #1740e2 0%, #712b9c 100%);
+  &:after {
+    @include pseudoElement(100%);
+    top: 0;
+    left: 0;
+    z-index: z(bg-content);
+
+    background: radial-gradient(140.09% 139.62% at 57.93% -35.69%, #1740E2 0%, #712B9C 100%);
+    transform: rotate(-180deg);
+  }
+
+}
+
+.content {
+  position: relative;
+  z-index: z(content);
 }

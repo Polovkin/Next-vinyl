@@ -2,7 +2,6 @@ import { withTranslation } from '../../../i18n'
 import LangSwitcher from '../../reusable/LangSwitcher/LangSwitcher'
 import Logotype from '../../reusable/Logotype/Logotype'
 import Navigation from '../../reusable/Navigation/Navigation'
-import Image from 'next/image'
 import s from './header.module.scss'
 
 const Header = () => {

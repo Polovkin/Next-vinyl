@@ -1,5 +1,5 @@
 {
-  "h1": "Простой пример",
+  "main-title": "PAPANYL - is the largest vinyl store in Ukraine",
   "change-locale": "Сменить язык",
   "to-second-page": "На другую станицу",
   "error-with-status": "{{statusCode}} ошибка с сервера",
