@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { Link, withTranslation } from '../../../i18n'
 import s from './navigation.module.scss'
 import { useEffect, useState } from 'react'
+import classNames from 'classnames'
 
 const Navigation = ({ t }) => {
   const [animate, setAnimate] = useState(false)
@@ -33,11 +34,11 @@ const Navigation = ({ t }) => {
             <span className={s.triangle} />
           </button>
         </div>
-        <ul className={`${s.list}`}>
+        <ul className={s.list}>
           {navLinks.map((item, index) => (
-            <li className={s.link} key={index}>
+            <li className={s.item} key={index}>
               <Link href={item.link}>
-                <a className={animate ? s.expandAnimate : ''}>{item.text}</a>
+                <a className={classNames(s.link, animate ? s.expandAnimate : '')}>{item.text}</a>
               </Link>
             </li>
           ))}

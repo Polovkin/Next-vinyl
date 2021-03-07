@@ -44,7 +44,7 @@
   height: inherit;
 }
 
-.link {
+.item {
 
   align-items: center;
   justify-content: center;
@@ -78,27 +78,15 @@
 
   }
 
-  a {
-    @extend %link-style;
-
-    position: relative;
-
-    display: block;
-    height: inherit;
-
-    opacity: 0;
-
-
-  }
 
   &:active {
 
-    a {
+    .link{
       top: 1px;
     }
 
     &:after {
-     height: 2px;
+      height: 2px;
     }
   }
 
@@ -108,6 +96,17 @@
       @include navigation_link_hover;
     }
   }
+}
+
+.link {
+  @extend %link-style;
+
+  position: relative;
+
+  display: block;
+  height: inherit;
+
+  opacity: 0;
 }
 
 .expandAnimate {
