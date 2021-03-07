@@ -22,7 +22,13 @@ const MainSection = ({ t }) => {
             </div>
             <div className={s.slider_image}>
               {/*   <Image objectFit="contain" layout="fill" src="/img/main-slider.png" />*/}
-              <Image width={611} height={417} objectFit="contain" src="/img/main-slider.png" />
+              <Image
+                width={611}
+                height={417}
+                layout="responsive"
+                objectFit="contain"
+                src="/img/main-slider.png"
+              />
             </div>
           </div>
         </div>
