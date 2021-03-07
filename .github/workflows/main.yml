@@ -22,13 +22,15 @@ jobs:
       - run: echo "${{ secrets.SSH_KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # Build 
+      - name: Run npm 
+        run: npm i
       - name: Run CI 
         run: npm ci
       - name: Run build    
         run: npm run build
       # Deploy
       - name: Deploy NodeJS app 
-        run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete .nuxt root@185.181.165.35:/var/www/polova.fun/dev/
+        run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete .next root@185.181.165.35:/var/www/polova.fun/dev/
       - name: Restart PM2 & git pull
         uses: appleboy/ssh-action@v0.1.2
         with:
