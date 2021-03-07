@@ -1,5 +1,9 @@
-%messenger {
-  @include size(60px);
+$buttons_height:60px 40px;
+$icons_height:60px 40px;
+
+
+@mixin messenger {
+  @include size(nth($buttons_height,1));
 
   align-items: center;
   justify-content: center;
@@ -14,6 +18,11 @@
 
   &:hover {
     @include contact_button_hover;
+  }
+
+  @include breakpoint ($desktop__laptop) {
+    @include size(nth($buttons_height,2));
+    border-radius: 10px;
   }
 }
 
@@ -54,23 +63,37 @@
 }
 
 .telegram {
-  @extend %messenger;
+  @include messenger;
 
   &:after {
     @include pseudoElement(24px, 'telegram.svg');
     position: relative;
     top: 2px;
     left: -1px;
+    @include breakpoint ($desktop__laptop) {
+      width: 18px;
+      height: 18px;
+    }
   }
 
 }
 
 .viber {
-  @extend %messenger;
+  @include messenger;
 
   &:after {
     @include pseudoElement(28px, 'viber.svg');
     position: relative;
+    @include breakpoint ($desktop__laptop) {
+      width: 18px;
+      height: 18px;
+    }
   }
 
+}
+
+.call {
+  @include breakpoint ($desktop__laptop) {
+    height: nth($buttons_height,2);
+  }
 }

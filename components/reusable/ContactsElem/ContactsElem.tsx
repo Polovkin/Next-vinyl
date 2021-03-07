@@ -1,4 +1,5 @@
 import { withTranslation } from '../../../i18n'
+import className from 'classnames'
 
 import s from './contacts-elem.module.scss'
 
@@ -13,7 +14,7 @@ const ContactsElem = ({ t }) => {
         <div className={s.buttons}>
           <button className={s.telegram} />
           <button className={s.viber} />
-          <button className={'button-primary'}>{t('contact-call')}</button>
+          <button className={className('button-primary', s.call)}>{t('contact-call')}</button>
         </div>
       </div>
     </>

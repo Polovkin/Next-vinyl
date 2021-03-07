@@ -29,6 +29,12 @@
   display: flex;
 
   padding-top: 90px;
+  @include breakpoint($desktop__laptop) {
+    padding-top: 50px;
+  }
+  @include breakpoint($desktop__laptop-min) {
+    padding-top: 0;
+  }
 }
 
 .slide {

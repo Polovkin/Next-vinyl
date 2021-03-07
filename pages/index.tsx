@@ -9,6 +9,9 @@ const Homepage = ({ t }) => {
     <>
       <MainLayout>
         <MainSection />
+        <section className="section">
+          <h1>test</h1>
+        </section>
       </MainLayout>
     </>
   )
