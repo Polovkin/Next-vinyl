@@ -39,6 +39,7 @@ const MainSection = ({ t }) => {
                     <Image
                       width={611}
                       height={417}
+                      loading="eager"
                       layout="responsive"
                       objectFit="contain"
                       src="/img/main-slider.png"
@@ -57,6 +58,7 @@ const MainSection = ({ t }) => {
                     <Image
                       width={611}
                       height={417}
+                      loading="eager"
                       layout="responsive"
                       objectFit="contain"
                       src="/img/main-slider.png"
@@ -75,6 +77,7 @@ const MainSection = ({ t }) => {
                     <Image
                       width={611}
                       height={417}
+                      loading="eager"
                       layout="responsive"
                       objectFit="contain"
                       src="/img/main-slider.png"
