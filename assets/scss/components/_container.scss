@@ -29,6 +29,7 @@ $breakpoints: (
 }
 
 $container-sizes: (
+  xs: map-get($breakpoints, sm) - 14px,
   sm: map-get($breakpoints, sm) - 28px,
   md: map-get($breakpoints, md) - 54px,
   lg: map-get($breakpoints, lg) - 100px,
