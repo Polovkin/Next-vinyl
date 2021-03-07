@@ -31,7 +31,7 @@
   padding-top: 90px;
 }
 
-.slider {
+.slide {
   flex-grow: 1;
 
   display: flex;
@@ -45,6 +45,7 @@
   }
 
   &_image {
+    padding: 20px;
     flex: 60%;
 
     position: relative;
@@ -66,4 +67,8 @@
 
   line-height: 28px;
 
+}
+
+.slick-dots {
+  display: none !important;
 }
