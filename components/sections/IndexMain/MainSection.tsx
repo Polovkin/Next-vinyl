@@ -19,6 +19,7 @@ const MainSection = ({ t }) => {
   )
 }
 
+
 MainSection.propTypes = {
   t: PropTypes.func.isRequired,
 }
