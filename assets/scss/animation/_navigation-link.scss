@@ -1,22 +1,24 @@
-@mixin navigation_link_hover {
-  @keyframes navigation-hover {
+@mixin navigation_link {
+  &:after {
+    transform: translateY(3px);
+    opacity: 0;
 
-    0% {
-      transform: translateY(3px);
-      opacity: 0;
-    }
+    transition: all ease .5s;
+  }
 
-    100% {
+  &:hover {
+
+    &:after {
       transform: translateX(0);
       opacity: 1;
     }
   }
 
-  animation: {
-    name: navigation-hover;
-    duration: .5s;
-    fill-mode: forwards;
-    timing-function: ease;
-  };
+  &:active {
+
+    .link{
+      top: 1px;
+    }
+  }
 }
 
