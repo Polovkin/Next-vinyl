@@ -3,7 +3,7 @@ import LangSwitcher from '../../reusable/LangSwitcher/LangSwitcher'
 import Navigation from '../../reusable/Navigation/Navigation'
 import s from './header.module.scss'
 import ContactsElem from '../../reusable/ContactsElem/ContactsElem'
-import Logotype from "../../reusable/Logotype/Logotype";
+import Logotype from '../../reusable/Logotype/Logotype'
 
 const Header = () => {
   const number = '0 (093) 941 2641'
@@ -27,7 +27,7 @@ const Header = () => {
           </div>
         </div>
         <div className={`${s.bottom_bar} container is-fluid`}>
-        <Logotype/>
+          <Logotype />
           <ContactsElem />
         </div>
       </header>

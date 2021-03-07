@@ -29,7 +29,7 @@ const Navigation = ({ t }) => {
     <>
       <nav className={s.content}>
         <div className={s.dropdown}>
-          <button className={s.button}>
+          <button className={classNames(s.button, 'disabled')}>
             {t('navigation-dropdown')}
             <span className={s.triangle} />
           </button>
