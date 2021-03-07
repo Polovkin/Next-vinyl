@@ -1,5 +1,7 @@
 {
-  "main-title": "PAPANYL - is the largest vinyl store in Ukraine",
+  "main-title": "PAPANYL - крупнейший магазин винила в Украине",
+  "main-description": "Еженедельно мы обновляем на сайте каталог и публикуем новые поступления",
+  "main-button": "Подробнее",
   "change-locale": "Сменить язык",
   "to-second-page": "На другую станицу",
   "error-with-status": "{{statusCode}} ошибка с сервера",

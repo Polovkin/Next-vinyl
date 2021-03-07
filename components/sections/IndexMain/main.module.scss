@@ -1,5 +1,6 @@
-.mainSection {
+.section {
   position: relative;
+display: flex;
 
   min-height: 100vh;
 
@@ -19,6 +20,39 @@
 }
 
 .content {
+  flex: 1;
+
   position: relative;
   z-index: z(content);
+
+  display: flex;
+
+  padding-top: 90px;
+}
+
+.slider {
+  flex: 1;
+
+  display: flex;
+
+  &_text {
+    flex: 40%;
+
+  }
+
+  &_image {
+    position: relative;
+    flex: 60%;
+  }
+}
+
+.heading {
+  color: $color__font--secondary;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 48px;
+}
+
+.description {
+
 }

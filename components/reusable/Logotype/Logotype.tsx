@@ -8,7 +8,8 @@ const Logotype = () => (
     <div className={logotypeStyle.logotype}>
       <Link href="/">
         <a className={logotypeStyle.link}>
-          <Image height={43} width={157} src="/icons/logotype-light.svg" />
+          {/*<Image height={43} width={157} src="/icons/logotype-light.svg" />*/}
+          <Image loading="eager" layout="fill" src="/icons/logotype-light.svg" />
         </a>
       </Link>
     </div>

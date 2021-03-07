@@ -13,7 +13,7 @@ const ContactsElem = ({ t }) => {
         <div className={s.buttons}>
           <button className={s.telegram} />
           <button className={s.viber} />
-          <button className={s.call}>{t('contact-call')}</button>
+          <button className={'button-primary'}>{t('contact-call')}</button>
         </div>
       </div>
     </>

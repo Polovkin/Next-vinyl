@@ -3,17 +3,26 @@ $animation_duration: .2s;
 .logotype {
   max-width: 200px;
 }
+
 .link {
-  display: flex;
   position: relative;
+
+  display: flex;
+  width: 150px;
+  height: 40px;
+
   padding: 10px;
-  transition: all $animation_duration ease-in;
+
   color: white;
+
+  transition: all $animation_duration ease-in;
+
   &:hover {
     transform: scale(1.02);
   }
 
 }
+
 .active {
   color: red;
 }

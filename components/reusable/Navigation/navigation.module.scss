@@ -45,7 +45,7 @@
 }
 
 .item {
-
+  @include navigation_link;
   align-items: center;
   justify-content: center;
 
@@ -70,32 +70,11 @@
 
       background-color: #b03adc;
       box-shadow: 0 0 10px #ac39dd;
-
-      opacity: 0;
-
-      transition: height ease .2s;
     }
 
   }
 
 
-  &:active {
-
-    .link{
-      top: 1px;
-    }
-
-    &:after {
-      height: 2px;
-    }
-  }
-
-  &:hover {
-
-    &:after {
-      @include navigation_link_hover;
-    }
-  }
 }
 
 .link {
