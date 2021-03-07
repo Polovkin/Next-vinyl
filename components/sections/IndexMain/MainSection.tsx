@@ -12,7 +12,7 @@ const MainSection = ({ t }) => {
     <>
       <section className={`section ${s.mainSection}`}>
         <div className={s.content}>
-          <h1>Deploy done</h1>
+          <h1>Last Deploy test</h1>
         </div>
       </section>
     </>
