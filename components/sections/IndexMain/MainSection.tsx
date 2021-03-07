@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import Slider from 'react-slick'
 import PropTypes from 'prop-types'
 import { withTranslation } from '../../../i18n'
@@ -19,7 +18,7 @@ const MainSection = ({ t }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    //autoplay: true,
+    autoplay: true,
     autoplaySpeed: 5000,
   }
 
