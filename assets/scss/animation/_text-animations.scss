@@ -1,0 +1,19 @@
+@mixin tracking-in-expand {
+  @keyframes tracking-in-expand {
+
+    0% {
+      letter-spacing: -.5em;
+
+      opacity: 0;
+    }
+
+    40% {
+      opacity: .6;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  animation: tracking-in-expand .7s cubic-bezier(.215, .610, .355, 1.000) both 1s;
+}

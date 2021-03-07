@@ -21,7 +21,7 @@
   @extend %bar-flex;
   height: 50px;
 
-  background-color: $color__secondary;
+  background-color: $color__secondary_dark;
 }
 
 .bottom_bar {
@@ -31,10 +31,11 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 
-  &:after {
+  &:before {
     @include pseudoElement(calc(100vw - 2rem));
-    left: 50%;
     bottom: 0;
+    left: 50%;
+
     height: 1px;
 
     background-color: $color__dark;
@@ -42,6 +43,7 @@
     transform: translateX(-50%);
     opacity: .1;
   }
+
 }
 
 .wrapper {

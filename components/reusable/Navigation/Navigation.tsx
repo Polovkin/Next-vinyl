@@ -1,8 +1,15 @@
 import PropTypes from 'prop-types'
 import { Link, withTranslation } from '../../../i18n'
 import s from './navigation.module.scss'
+import { useEffect, useState } from 'react'
 
 const Navigation = ({ t }) => {
+  const [animate, setAnimate] = useState(false)
+
+  useEffect(() => {
+    setAnimate(true)
+  }, [])
+
   const navLinks = [
     {
       text: t('navigation-stock'),
@@ -30,7 +37,7 @@ const Navigation = ({ t }) => {
           {navLinks.map((item, index) => (
             <li className={s.link} key={index}>
               <Link href={item.link}>
-                <a>{item.text}</a>
+                <a className={animate ? s.expandAnimate : ''}>{item.text}</a>
               </Link>
             </li>
           ))}

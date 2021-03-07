@@ -45,6 +45,7 @@
 }
 
 .link {
+
   align-items: center;
   justify-content: center;
 
@@ -62,6 +63,7 @@
       @include pseudoElement(100%);
       bottom: 0;
       left: 0;
+
       height: 3px;
 
       border-radius: 5px 5px 0 0;
@@ -71,17 +73,21 @@
 
       opacity: 0;
 
-      transition: width ease .2s;
+      transition: height ease .2s;
     }
 
   }
 
   a {
     @extend %link-style;
+
     position: relative;
 
     display: block;
     height: inherit;
+
+    opacity: 0;
+
 
   }
 
@@ -92,7 +98,7 @@
     }
 
     &:after {
-      width: 105%;
+     height: 2px;
     }
   }
 
@@ -104,5 +110,7 @@
   }
 }
 
-
+.expandAnimate {
+  @include tracking-in-expand;
+}
 

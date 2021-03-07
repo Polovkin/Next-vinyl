@@ -11,16 +11,17 @@
   border-radius: 20px;
 
   background-color: $color__secondary;
+
   &:hover {
     @include contact_button_hover;
   }
 }
 
 .wrap {
-  display: flex;
   @include ie11() {
     margin-left: auto;
   }
+  display: flex;
 }
 
 .schedule {
@@ -76,11 +77,12 @@
 
 .call {
   min-width: 200px;
+
   padding: 0 25px;
 
   border-radius: 20px;
 
-  background: linear-gradient(204.76deg, $color__primary 11.31%, #4622f5 153.78%);
+  background: linear-gradient(204.76deg, $color__primary 11.31%, $color__secondary_dark 153.78%);
   box-shadow: 0 0 10px rgba(187, 35, 232, .4);
 
   color: $color__font--secondary;
