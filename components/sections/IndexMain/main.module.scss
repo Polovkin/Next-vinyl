@@ -1,5 +1,6 @@
 .section {
   position: relative;
+
   display: flex;
 
   min-height: 100vh;
@@ -38,21 +39,31 @@
   &_text {
     flex: 40%;
 
+    padding-top: 50px;
+
+    color: $color__font--secondary;
   }
 
   &_image {
-    position: relative;
     flex: 60%;
+
+    position: relative;
   }
 }
 
 .heading {
-  color: $color__font--secondary;
+
   font-size: 40px;
   font-weight: 800;
   line-height: 48px;
 }
 
 .description {
+
+  max-width: 400px;
+
+  margin: 2rem 0;
+
+  line-height: 28px;
 
 }
