@@ -18,3 +18,4 @@ About.propTypes = {
 }
 
 export default withTranslation('about')(About)*/
+export default About
