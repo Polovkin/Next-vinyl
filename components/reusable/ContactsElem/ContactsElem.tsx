@@ -1,9 +1,10 @@
-import { withTranslation } from '../../../next-i18next.config'
 import className from 'classnames'
 
 import s from './contacts-elem.module.scss'
+import { useTranslation } from 'next-i18next'
 
-const ContactsElem = ({ t }) => {
+const ContactsElem = () => {
+  const { t } = useTranslation('common')
   return (
     <>
       <div className={s.wrap}>
@@ -21,4 +22,4 @@ const ContactsElem = ({ t }) => {
   )
 }
 
-export default withTranslation('header')(ContactsElem)
+export default ContactsElem

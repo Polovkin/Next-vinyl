@@ -1,13 +1,15 @@
 import Slider from 'react-slick'
 import PropTypes from 'prop-types'
-import { withTranslation } from '../../../next-i18next.config'
+
 import { useHeader } from '../../Layout/Header/HeaderCondext'
 import { useState } from 'react'
 import s from './main.module.scss'
 import className from 'classnames'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
-const MainSection = ({ t }) => {
+const MainSection = () => {
+  const { t } = useTranslation('common')
   const [input, setInput] = useState()
   const menuState = useHeader()
 
@@ -94,8 +96,4 @@ const MainSection = ({ t }) => {
   )
 }
 
-MainSection.propTypes = {
-  t: PropTypes.func.isRequired,
-}
-
-export default withTranslation('common')(MainSection)
+export default MainSection
