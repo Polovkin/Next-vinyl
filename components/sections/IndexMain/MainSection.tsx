@@ -1,6 +1,6 @@
 import Slider from 'react-slick'
 import PropTypes from 'prop-types'
-import { withTranslation } from '../../../i18n'
+import { withTranslation } from '../../../next-i18next.config'
 import { useHeader } from '../../Layout/Header/HeaderCondext'
 import { useState } from 'react'
 import s from './main.module.scss'

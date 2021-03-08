@@ -1,4 +1,4 @@
-import { withTranslation } from '../../../i18n'
+import { withTranslation } from '../../../next-i18next.config'
 import className from 'classnames'
 
 import s from './contacts-elem.module.scss'

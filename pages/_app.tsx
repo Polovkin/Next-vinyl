@@ -1,6 +1,5 @@
-import App from 'next/app'
 import '../assets/scss/_app.scss'
-import { appWithTranslation } from '../i18n'
+import { appWithTranslation } from 'next-i18next'
 import { HeaderProvider } from '../components/Layout/Header/HeaderCondext'
 
 const MyApp = ({ Component, pageProps }) => {
@@ -11,6 +10,6 @@ const MyApp = ({ Component, pageProps }) => {
   )
 }
 
-MyApp.getInitialProps = async (appContext) => ({ ...(await App.getInitialProps(appContext)) })
+//MyApp.getInitialProps = async (appContext) => ({ ...(await App.getInitialProps(appContext)) })
 
 export default appWithTranslation(MyApp)

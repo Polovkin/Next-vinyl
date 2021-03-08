@@ -1,25 +1,25 @@
-import PropTypes from 'prop-types'
-import { withTranslation } from '../i18n'
 import { MainLayout } from '../layouts/MainLayout'
-import MainSection from '../components/sections/IndexMain/MainSection'
-import Form from '../components/reusable/Form/Form'
+import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const Homepage = ({ t }) => {
+const Homepage = () => {
+  const { t } = useTranslation('common')
   return (
     <>
       <MainLayout>
         {/* <MainSection />*/}
 
         <section className="section">
-          <h1>test</h1>
-          <Form />
+          <h1>{t('main-title')}</h1>
+          {/*<Form />*/}
         </section>
       </MainLayout>
     </>
   )
 }
 
-Homepage.getInitialProps = async () => ({
+/*Homepage.getInitialProps = async () => ({
   namespacesRequired: ['common', 'header', 'form'],
 })
 
@@ -27,4 +27,11 @@ Homepage.propTypes = {
   t: PropTypes.func.isRequired,
 }
 
-export default withTranslation('common')(Homepage)
+export default withTranslation('common')(Homepage)*/
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'header'])),
+  },
+})
+
+export default Homepage

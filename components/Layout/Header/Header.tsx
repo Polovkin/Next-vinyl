@@ -1,4 +1,3 @@
-import { withTranslation } from '../../../i18n'
 import LangSwitcher from '../../reusable/LangSwitcher/LangSwitcher'
 import Navigation from '../../reusable/Navigation/Navigation'
 import s from './header.module.scss'
@@ -28,11 +27,11 @@ const Header = () => {
         </div>
         <div className={`${s.bottom_bar} container is-fluid`}>
           <Logotype />
-          <ContactsElem />
+          {/*<ContactsElem />*/}
         </div>
       </header>
     </>
   )
 }
 
-export default withTranslation('header')(Header)
+export default Header

@@ -1,7 +1,7 @@
 import logotypeStyle from './logotype.module.scss'
 
 import Image from 'next/image'
-import { Link } from '../../../i18n'
+import Link from 'next/link'
 
 const Logotype = () => (
   <>

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { withTranslation } from '../../../i18n'
+import { withTranslation } from '../../../next-i18next.config'
 import s from './form.module.scss'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'

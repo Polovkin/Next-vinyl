@@ -1,6 +1,6 @@
-const { nextI18NextRewrites } = require('next-i18next/rewrites')
+const { i18n } = require('./next-i18next.config')
 
-const localeSubpaths = {}
+
 
 module.exports = {
   env: {
@@ -10,8 +10,6 @@ module.exports = {
     includePaths: ['./src'],
     prependData: `@import "/assets/scss/core/global.scss";`,
   },
-  rewrites: async () => nextI18NextRewrites(localeSubpaths),
-  publicRuntimeConfig: {
-    localeSubpaths,
-  },
+  i18n,
+
 }

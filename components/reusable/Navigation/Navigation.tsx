@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types'
-import { Link, withTranslation } from '../../../i18n'
-import s from './navigation.module.scss'
+import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
+import s from './navigation.module.scss'
 
-const Navigation = ({ t }) => {
+const Navigation = () => {
+  const { t } = useTranslation('header')
   const [animate, setAnimate] = useState(false)
 
   useEffect(() => {
@@ -48,7 +50,4 @@ const Navigation = ({ t }) => {
   )
 }
 
-Navigation.propTypes = {
-  t: PropTypes.func.isRequired,
-}
-export default withTranslation('header')(Navigation)
+export default Navigation
