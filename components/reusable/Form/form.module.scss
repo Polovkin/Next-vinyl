@@ -46,8 +46,10 @@
 }
 
 .body {
-  display: flex;
   flex-direction: column;
+
+  display: flex;
+
   padding-top: 150px;
 }
 
@@ -72,12 +74,14 @@
 
   transition: all .3s ease-in;
   grid-area: placeholder;
+
   &_animate {
     color: $input__font_color !important;
 
     transform: translate(0) scale(.7);
   }
 }
+
 .input {
   @extend %reset;
   height: $input_height;
@@ -96,6 +100,9 @@
   font-weight: bold;
   text-transform: uppercase;
 
-  animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
+
   grid-area: error;
+}
+.error_animate {
+  animation: shake .82s cubic-bezier(.36, .07, .19, .97) both;
 }

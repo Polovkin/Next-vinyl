@@ -1,5 +1,11 @@
 {
   "submit": "Send",
-  "placeholder-name": "Enter your name"
-
+  "placeholder-name": "Enter your name",
+  "placeholder-email": "Enter your email",
+  "placeholder-phone": "Enter your phone",
+  "placeholder-message": "\nWrite your message. For example: \"I want to order the first album of The Beatles\"",
+  "error-required": "Required field",
+  "error-minLength": "The minimum number of characters is ",
+  "error-maxLength": "The maximum number of characters is",
+  "error-email": "Invalid mail"
 }

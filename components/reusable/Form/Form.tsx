@@ -1,68 +1,113 @@
 import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import classNames from 'classnames'
 import s from './form.module.scss'
 
 interface IFormInputs {
   name: string
   email: string
+  phone: string
 }
 
-const useInput = (initialValue) => {
-  const [value, setValue] = useState(initialValue)
-
-  const onChange = (event) => {
-    const input = event.target
-    const error = input.parentElement.querySelector('span')
-
-    setValue(input.value)
-    input.value
-      ? error.classList.add(s.placeholder_animate)
-      : error.classList.remove(s.placeholder_animate)
-  }
-
-  return {
-    bind: { value, onChange },
-    value,
-  }
-}
 const Form = () => {
   const { t } = useTranslation('form')
-  const { register, handleSubmit, errors } = useForm<IFormInputs>()
-  const name = useInput('')
-
-  const onSubmit = (data) => {
-    /*console.log(errors)
-    console.log(data)
-    console.log('eblo')*/
+  const { register, handleSubmit, errors, watch } = useForm<IFormInputs>()
+  const err = {
+    req: t('error-required'),
+    min: t('error-minLength'),
+    max: t('error-maxLength'),
+    mail: t('error-email'),
   }
-  //console.log(watch('name')) // watch input value by passing the name of it
-  const InputError = ({ error }) => {
-    console.log(error.ref.name)
+  const onSubmit = (data) => {}
+
+  const InputErrorText = ({ error }) => {
+    console.log(error)
     switch (error.type) {
       case 'required':
-        return <span className={s.error}>Your input is required</span>
+        return <small>Your input is required</small>
       case 'minLength':
-        return <span className={s.error}>Your input exceed maxLength</span>
+        return <small>Your input exceed minLength</small>
+      case 'maxLength':
+        return <small>Your input exceed maxLength</small>
+      case 'pattern':
+        return <small>Invalid email</small>
       default:
         return <span />
     }
   }
+
   return (
     <section className={`section`}>
       <div className="container">
-        <form className={s.body} onSubmit={handleSubmit(onSubmit)}>
+        <form noValidate className={s.body} onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name" className={s.label}>
-            <span className={s.placeholder}>{t('placeholder-name')}</span>
+            <span className={classNames(s.placeholder, watch('name') ? s.placeholder_animate : '')}>
+              {t('placeholder-name')}
+            </span>
+
             <input
               id="name"
               autoComplete="off"
               className={s.input}
               name="name"
-              ref={register({ required: true, minLength: 2 })}
-              {...name.bind}
+              type="text"
+              ref={register({
+                required: err.req,
+                minLength: { value: 2, message: err.min + ' 2' },
+                maxLength: { value: 20, message: err.max + ' 20' },
+              })}
             />
-            {errors.name && <InputError error={errors.name} />}
+            <span className={classNames(s.error, errors.name ? s.error_animate : '')}>
+              {errors.name && errors.name.message}
+            </span>
+          </label>
+
+          <label htmlFor="email" className={s.label}>
+            <span
+              className={classNames(s.placeholder, watch('email') ? s.placeholder_animate : '')}
+            >
+              {t('placeholder-email')}
+            </span>
+
+            <input
+              id="email"
+              type="email"
+              className={s.input}
+              name="email"
+              ref={register({
+                required: err.req,
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: err.mail,
+                },
+              })}
+            />
+            <span className={classNames(s.error, errors.email ? s.error_animate : '')}>
+              {errors.email && errors.email.message}
+            </span>
+          </label>
+
+          <label htmlFor="phone" className={s.label}>
+            <span
+              className={classNames(s.placeholder, watch('phone') ? s.placeholder_animate : '')}
+            >
+              {t('placeholder-phone')}
+            </span>
+
+            <input
+              id="phone"
+              type="text"
+              className={s.input}
+              name="phone"
+              ref={register({
+                required: err.req,
+                minLength: { value: 10, message: err.min + ' 10' },
+                maxLength: { value: 13, message: err.max + ' 13' },
+              })}
+            />
+            <span className={classNames(s.error, errors.phone ? s.error_animate : '')}>
+              {errors.phone && errors.phone.message}
+            </span>
           </label>
           <button type="submit">{t('submit')}</button>
         </form>

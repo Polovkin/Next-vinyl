@@ -1,4 +1,11 @@
 {
   "submit": "Отправить",
-  "placeholder-name": "Ведите свое имя"
+  "placeholder-name": "Ведите свое имя",
+  "placeholder-email": "Ведите свой email",
+  "placeholder-phone": "Ведите номер телефона",
+  "placeholder-message": "Напишите своё сообщение. Например: \"Хочу заказать первый альбом The Beatles\"",
+  "error-required": "Поле обязательно для ввода",
+  "error-minLength": "Минимальное количество символов не менее",
+  "error-maxLength": "Максимальное количество символов не более",
+  "error-email": "Неверный формат mail"
 }
