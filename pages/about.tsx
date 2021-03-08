@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 import { MainLayout } from '../layouts/MainLayout'
-const About = ({}) => (
+const About = () => (
   <>
     <MainLayout>
       <h1>test</h1>

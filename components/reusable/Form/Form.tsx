@@ -1,9 +1,7 @@
-import PropTypes from 'prop-types'
-
-import s from './form.module.scss'
+import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { useTranslation } from 'next-i18next'
+import s from './form.module.scss'
 
 interface IFormInputs {
   name: string
@@ -29,8 +27,8 @@ const useInput = (initialValue) => {
   }
 }
 const Form = () => {
-  const { t } = useTranslation('common')
-  const { register, handleSubmit, watch, errors } = useForm<IFormInputs>()
+  const { t } = useTranslation('form')
+  const { register, handleSubmit, errors } = useForm<IFormInputs>()
   const name = useInput('')
 
   const onSubmit = (data) => {

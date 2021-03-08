@@ -4,7 +4,7 @@ import s from './contacts-elem.module.scss'
 import { useTranslation } from 'next-i18next'
 
 const ContactsElem = () => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation('header')
   return (
     <>
       <div className={s.wrap}>

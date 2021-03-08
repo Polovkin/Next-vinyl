@@ -27,7 +27,7 @@ const Header = () => {
         </div>
         <div className={`${s.bottom_bar} container is-fluid`}>
           <Logotype />
-          {/*<ContactsElem />*/}
+          <ContactsElem />
         </div>
       </header>
     </>

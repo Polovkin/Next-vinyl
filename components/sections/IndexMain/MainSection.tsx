@@ -1,5 +1,4 @@
 import Slider from 'react-slick'
-import PropTypes from 'prop-types'
 
 import { useHeader } from '../../Layout/Header/HeaderCondext'
 import { useState } from 'react'
