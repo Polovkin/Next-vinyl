@@ -2,51 +2,69 @@ import PropTypes from 'prop-types'
 import { withTranslation } from '../../../i18n'
 import s from './form.module.scss'
 import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 
 interface IFormInputs {
-  firstName: string
+  name: string
   email: string
 }
 
+const useInput = (initialValue) => {
+  const [value, setValue] = useState(initialValue)
+
+  const onChange = (event) => {
+    const input = event.target
+    const error = input.parentElement.querySelector('span')
+
+    setValue(input.value)
+    input.value
+      ? error.classList.add(s.placeholder_animate)
+      : error.classList.remove(s.placeholder_animate)
+  }
+
+  return {
+    bind: { value, onChange },
+    value,
+  }
+}
 const Form = ({ t }) => {
   const { register, handleSubmit, watch, errors } = useForm<IFormInputs>()
+  const name = useInput('')
 
-  const isEmpty = (e) => {
-    console.log(e.target.id)
-  }
   const onSubmit = (data) => {
+    /*console.log(errors)
     console.log(data)
-    console.log('eblo')
+    console.log('eblo')*/
   }
-  //console.log(watch('firstName')) // watch input value by passing the name of it
-
+  //console.log(watch('name')) // watch input value by passing the name of it
+  const InputError = ({ error }) => {
+    console.log(error.ref.name)
+    switch (error.type) {
+      case 'required':
+        return <span className={s.error}>Your input is required</span>
+      case 'minLength':
+        return <span className={s.error}>Your input exceed maxLength</span>
+      default:
+        return <span />
+    }
+  }
   return (
     <section className={`section`}>
       <div className="container">
         <form className={s.body} onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name" className={s.label}>
-            <span className={s.placeholder}>Name</span>
+            <span className={s.placeholder}>{t('placeholder-name')}</span>
             <input
               id="name"
-              onFocus={isEmpty}
+              autoComplete="off"
               className={s.input}
-              name="firstName"
+              name="name"
               ref={register({ required: true, minLength: 2 })}
+              {...name.bind}
             />
-            {errors.firstName?.type === 'required' && (
-              <span className={s.error}>Your input is required</span>
-            )}
-            {errors.firstName?.type === 'minLength' && (
-              <span className={s.error}>Your input exceed maxLength</span>
-            )}
+            {errors.name && <InputError error={errors.name} />}
           </label>
-
-          <div>
-            <input name="email" ref={register({ required: true })} />
-            {errors.email && <span>This field is required</span>}
-          </div>
-
-          <input type="submit" />
+          <button type="submit">{t('submit')}</button>
         </form>
       </div>
     </section>
@@ -57,4 +75,4 @@ Form.propTypes = {
   t: PropTypes.func.isRequired,
 }
 
-export default withTranslation('common')(Form)
+export default withTranslation('form')(Form)

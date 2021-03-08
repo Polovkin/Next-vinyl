@@ -72,8 +72,8 @@
 
   transition: all .3s ease-in;
   grid-area: placeholder;
-  &Animate {
-    color: $input__font_color;
+  &_animate {
+    color: $input__font_color !important;
 
     transform: translate(0) scale(.7);
   }

@@ -20,7 +20,7 @@ const MainSection = ({ t }) => {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
-    fade: false
+    fade: false,
   }
 
   return (

@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types'
 import { withTranslation } from '../i18n'
 import { MainLayout } from '../layouts/MainLayout'
-
 import MainSection from '../components/sections/IndexMain/MainSection'
+import Form from '../components/reusable/Form/Form'
 
 const Homepage = ({ t }) => {
   return (
     <>
       <MainLayout>
-        <MainSection />
+        {/* <MainSection />*/}
+
         <section className="section">
           <h1>test</h1>
+          <Form />
         </section>
       </MainLayout>
     </>
@@ -18,7 +20,7 @@ const Homepage = ({ t }) => {
 }
 
 Homepage.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'header'],
+  namespacesRequired: ['common', 'header', 'form'],
 })
 
 Homepage.propTypes = {

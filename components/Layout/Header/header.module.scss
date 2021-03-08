@@ -30,7 +30,7 @@
 
   padding-top: 1rem;
   padding-bottom: 1rem;
-
+  background-color: #6a2da2;
   &:before {
     @include pseudoElement(calc(100vw - 2rem));
     bottom: 0;
