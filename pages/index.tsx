@@ -3,8 +3,8 @@ import { useTranslation } from 'next-i18next'
 import { connect } from 'react-redux'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import MainSection from '../components/sections/IndexMain/MainSection'
-import Form from '../components/reusable/Form/Form'
 import Alert from '../components/reusable/Alert/Alert'
+import NewProducts from '../components/sections/IndexNewProducts/NewProducts'
 
 const Homepage = ({ alert }) => {
   const { t } = useTranslation('common')
@@ -13,10 +13,11 @@ const Homepage = ({ alert }) => {
       <MainLayout>
         {alert && <Alert text={alert} />}
         <MainSection />
-        <section className="section">
+        <NewProducts />
+        {/* <section className="section">
           <h1>{t('main-title')}</h1>
           <Form />
-        </section>
+        </section>*/}
       </MainLayout>
     </>
   )

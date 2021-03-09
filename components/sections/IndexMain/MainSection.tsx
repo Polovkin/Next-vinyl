@@ -1,5 +1,4 @@
 import Slider from 'react-slick'
-
 import { useHeader } from '../../Layout/Header/HeaderCondext'
 import { useState } from 'react'
 import s from './main.module.scss'
@@ -9,8 +8,6 @@ import { useTranslation } from 'next-i18next'
 
 const MainSection = () => {
   const { t } = useTranslation('common')
-  const [input, setInput] = useState()
-  const menuState = useHeader()
 
   const settings = {
     dots: true,

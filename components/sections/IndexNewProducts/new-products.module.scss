@@ -1,0 +1,26 @@
+.section {
+  display: grid;
+  grid: {
+    row-gap: 2rem;
+    template:  {
+      columns: repeat(2,1fr);
+      rows: 80px auto;
+      areas: 'title control'  'slider slider';
+    };
+  }
+}
+
+.title {
+  margin-bottom: 3rem;
+  grid-area: title;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  grid-area: slider;
+}
+
+.control {
+  grid-area: control;
+}
