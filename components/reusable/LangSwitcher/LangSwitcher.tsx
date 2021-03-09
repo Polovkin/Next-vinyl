@@ -1,7 +1,8 @@
+import { FunctionComponent } from 'react'
 import Link from 'next/link'
 import style from './LangSwitcher.module.scss'
 
-const LangSwitcher = () => {
+const LangSwitcher: FunctionComponent = () => {
   return (
     <>
       <div className={style.wrap}>

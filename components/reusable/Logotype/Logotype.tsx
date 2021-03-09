@@ -1,9 +1,10 @@
-import logotypeStyle from './logotype.module.scss'
-
+import { FunctionComponent } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Logotype = () => (
+import logotypeStyle from './logotype.module.scss'
+
+const Logotype: FunctionComponent = () => (
   <>
     <div className={logotypeStyle.logotype}>
       <Link href="/">

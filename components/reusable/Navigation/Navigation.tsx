@@ -1,11 +1,11 @@
-import PropTypes from 'prop-types'
+import { FunctionComponent } from 'react'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import s from './navigation.module.scss'
 
-const Navigation = () => {
+const Navigation: FunctionComponent = () => {
   const { t } = useTranslation('header')
   const [animate, setAnimate] = useState(false)
 

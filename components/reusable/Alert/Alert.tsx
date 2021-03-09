@@ -1,7 +1,11 @@
+import { FunctionComponent } from 'react'
 import s from './alert.module.scss'
 import { useTranslation } from 'next-i18next'
 
-const Alert = ({ text }) => {
+type Props = {
+  text: string
+}
+const Alert: FunctionComponent<Props> = ({ text }) => {
   const { t } = useTranslation('common')
 
   let message

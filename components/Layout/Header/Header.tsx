@@ -1,10 +1,11 @@
+import { FunctionComponent } from 'react'
 import LangSwitcher from '../../reusable/LangSwitcher/LangSwitcher'
 import Navigation from '../../reusable/Navigation/Navigation'
 import s from './header.module.scss'
 import ContactsElem from '../../reusable/ContactsElem/ContactsElem'
 import Logotype from '../../reusable/Logotype/Logotype'
 
-const Header = () => {
+const Header: FunctionComponent = () => {
   const number = '0 (093) 941 2641'
   const email = 'info@papanyl.com.ua'
 

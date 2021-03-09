@@ -1,9 +1,10 @@
+import { useTranslation } from 'next-i18next'
+import { FunctionComponent } from 'react'
 import className from 'classnames'
 
 import s from './contacts-elem.module.scss'
-import { useTranslation } from 'next-i18next'
 
-const ContactsElem = () => {
+const ContactsElem: FunctionComponent = () => {
   const { t } = useTranslation('header')
   return (
     <>

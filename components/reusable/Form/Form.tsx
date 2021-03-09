@@ -1,23 +1,22 @@
 import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
-import { connect, useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import classNames from 'classnames'
-import s from './form.module.scss'
-import Alert from '../Alert/Alert'
 import { sendForm } from '../../../store/actions'
 import { FormInputs } from '../../../interfaces/components'
+import s from './form.module.scss'
 
-const Form = ({ alert }) => {
+const Form = () => {
   const { t } = useTranslation('form')
+  const dispatch = useDispatch()
   const { register, handleSubmit, errors, watch } = useForm<FormInputs>()
+
   const err = {
     req: t('error-required'),
     min: t('error-minLength'),
     max: t('error-maxLength'),
     mail: t('error-email'),
   }
-
-  const dispatch = useDispatch()
 
   const onSubmit = async (data: FormInputs) => {
     const form_data = new FormData()
@@ -30,7 +29,6 @@ const Form = ({ alert }) => {
 
   return (
     <section className={`section`}>
-      {alert && <Alert text={alert} />}
       <div className="container">
         <form noValidate className={s.body} onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name" className={s.label}>
@@ -130,7 +128,4 @@ const Form = ({ alert }) => {
   )
 }
 
-const mapStateToProps = (state) => ({
-  alert: state.app.alert,
-})
-export default connect(mapStateToProps, null)(Form)
+export default Form
