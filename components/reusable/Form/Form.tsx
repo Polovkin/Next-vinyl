@@ -2,11 +2,15 @@ import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
 import classNames from 'classnames'
 import s from './form.module.scss'
+import Alert from '../Alert/Alert'
+import { sendForm } from '../../../store/actions'
+import { processEnv } from '@next/env'
 
 interface IFormInputs {
   name: string
   email: string
   phone: string
+  message: string
 }
 
 const Form = () => {
@@ -18,7 +22,20 @@ const Form = () => {
     max: t('error-maxLength'),
     mail: t('error-email'),
   }
-  const onSubmit = (data) => {}
+  const onSubmit = async (data) => {
+    console.log(data)
+    const form_data = new FormData()
+    for (const key in data) {
+      form_data.append(key, data[key])
+    }
+
+    const response = await fetch('http://localhost:3001/form', {
+      method: 'POST',
+      body: form_data,
+    })
+    const json = await response.json()
+    console.log(json)
+  }
 
   const InputErrorText = ({ error }) => {
     console.log(error)
@@ -38,6 +55,7 @@ const Form = () => {
 
   return (
     <section className={`section`}>
+      <Alert text={'alert 2'} />
       <div className="container">
         <form noValidate className={s.body} onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name" className={s.label}>
@@ -107,6 +125,27 @@ const Form = () => {
             />
             <span className={classNames(s.error, errors.phone ? s.error_animate : '')}>
               {errors.phone && errors.phone.message}
+            </span>
+          </label>
+          <label htmlFor="message" className={s.label}>
+            <span
+              className={classNames(s.placeholder, watch('message') ? s.placeholder_animate : '')}
+            >
+              {t('placeholder-message')}
+            </span>
+
+            <textarea
+              id="message"
+              className={s.input}
+              name="message"
+              ref={register({
+                required: err.req,
+                minLength: { value: 10, message: err.min + ' 10' },
+                maxLength: { value: 13, message: err.max + ' 13' },
+              })}
+            />
+            <span className={classNames(s.error, errors.message ? s.error_animate : '')}>
+              {errors.message && errors.message.message}
             </span>
           </label>
           <button type="submit">{t('submit')}</button>
