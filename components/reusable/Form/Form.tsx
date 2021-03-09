@@ -1,61 +1,36 @@
 import { useTranslation } from 'next-i18next'
 import { useForm } from 'react-hook-form'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import classNames from 'classnames'
 import s from './form.module.scss'
 import Alert from '../Alert/Alert'
 import { sendForm } from '../../../store/actions'
-import { processEnv } from '@next/env'
+import { FormInputs } from '../../../interfaces/components'
 
-interface IFormInputs {
-  name: string
-  email: string
-  phone: string
-  message: string
-}
-
-const Form = () => {
+const Form = ({ alert }) => {
   const { t } = useTranslation('form')
-  const { register, handleSubmit, errors, watch } = useForm<IFormInputs>()
+  const { register, handleSubmit, errors, watch } = useForm<FormInputs>()
   const err = {
     req: t('error-required'),
     min: t('error-minLength'),
     max: t('error-maxLength'),
     mail: t('error-email'),
   }
-  const onSubmit = async (data) => {
-    console.log(data)
+
+  const dispatch = useDispatch()
+
+  const onSubmit = async (data: FormInputs) => {
     const form_data = new FormData()
     for (const key in data) {
       form_data.append(key, data[key])
     }
 
-    const response = await fetch('http://localhost:3001/form', {
-      method: 'POST',
-      body: form_data,
-    })
-    const json = await response.json()
-    console.log(json)
-  }
-
-  const InputErrorText = ({ error }) => {
-    console.log(error)
-    switch (error.type) {
-      case 'required':
-        return <small>Your input is required</small>
-      case 'minLength':
-        return <small>Your input exceed minLength</small>
-      case 'maxLength':
-        return <small>Your input exceed maxLength</small>
-      case 'pattern':
-        return <small>Invalid email</small>
-      default:
-        return <span />
-    }
+    dispatch(sendForm(form_data))
   }
 
   return (
     <section className={`section`}>
-      <Alert text={'alert 2'} />
+      {alert && <Alert text={alert} />}
       <div className="container">
         <form noValidate className={s.body} onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name" className={s.label}>
@@ -141,7 +116,7 @@ const Form = () => {
               ref={register({
                 required: err.req,
                 minLength: { value: 10, message: err.min + ' 10' },
-                maxLength: { value: 13, message: err.max + ' 13' },
+                maxLength: { value: 200, message: err.max + ' 200' },
               })}
             />
             <span className={classNames(s.error, errors.message ? s.error_animate : '')}>
@@ -155,4 +130,7 @@ const Form = () => {
   )
 }
 
-export default Form
+const mapStateToProps = (state) => ({
+  alert: state.app.alert,
+})
+export default connect(mapStateToProps, null)(Form)

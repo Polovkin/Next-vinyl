@@ -6,5 +6,7 @@
   "to-second-page": "To second page",
   "error-with-status": "A {{statusCode}} error occurred on server",
   "error-without-status": "An error occurred on the server",
+  "alert-success": "Message sent successfully!",
+  "alert-not-success": "Submission error. try it again",
   "about-link": "About"
 }

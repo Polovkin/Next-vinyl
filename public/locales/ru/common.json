@@ -6,5 +6,8 @@
   "to-second-page": "На другую станицу",
   "error-with-status": "{{statusCode}} ошибка с сервера",
   "error-without-status": "Ошибка",
+
+  "alert-success": "Сообщение успешно отправлено!",
+  "alert-not-success": "Ошибка отправки. Попробуйте снова",
   "about-link": "Подробнее"
 }

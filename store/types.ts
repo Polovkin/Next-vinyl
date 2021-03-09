@@ -1,0 +1,4 @@
+export const SUCCESS_OK = 'FORM/SUCCESS_OK'
+export const SUCCESS_ERROR = 'FORM/SUCCESS_ERROR'
+export const SHOW_ALERT = 'APP/SHOW_ALERT'
+export const HIDE_ALERT = 'APP/HIDE_ALERT'
