@@ -22,14 +22,18 @@ const NewProducts = ({ posts }) => {
         </div>
 
         <div className={s.slider}>
-          {posts.map((posts, index) => (
-            <Card
-              name={posts.name}
-              description={posts.description}
-              image={posts.image}
-              key={index}
-            />
-          ))}
+          {posts.length ? (
+            posts.map((posts, index) => (
+              <Card
+                name={posts.name}
+                description={posts.description}
+                image={posts.image}
+                key={index}
+              />
+            ))
+          ) : (
+            <p>Нет товаров</p>
+          )}
         </div>
       </div>
     </section>

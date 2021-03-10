@@ -32,6 +32,7 @@ const Homepage = ({ alert, posts: serverPosts }) => {
       <MainLayout>
         {alert && <Alert text={alert} />}
         <MainSection />
+
         <NewProducts posts={posts} />
 
         <section className="section">
