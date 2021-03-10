@@ -13,5 +13,7 @@ module.exports = {
     prependData: `@import "/assets/scss/core/global.scss";`,
   },
   i18n,
-
+  images: {
+    domains: ['localhost']
+  }
 }

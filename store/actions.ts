@@ -1,5 +1,4 @@
-import { SHOW_ALERT, HIDE_ALERT, SUCCESS_ERROR, SUCCESS_OK } from './types'
-import { FormInputs } from '../interfaces/components'
+import { SHOW_ALERT, HIDE_ALERT, SUCCESS_ERROR, SUCCESS_OK, FETCH_POSTS } from './types'
 
 interface simpleAction {
   type: string
@@ -36,6 +35,21 @@ export function sendForm(formData) {
       }
     } catch (e) {
       dispatch(showAlert('not-success'))
+    }
+  }
+}
+export function getProducts() {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(`${process.env.FORM_URL}/shop/products/api`, {
+        method: 'GET',
+      })
+      if (response.ok) {
+        const json = await response.json()
+        dispatch({ type: FETCH_POSTS, payload: json })
+      }
+    } catch (e) {
+      //dispatch(showAlert('not-success'))
     }
   }
 }
