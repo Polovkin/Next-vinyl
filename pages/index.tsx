@@ -46,13 +46,13 @@ const Homepage = ({ alert, posts: serverPosts }) => {
   )
 }
 
-export const getStaticProps = async ({ locale }) => {
-  const response = await fetch(`http://localhost:3001/shop/products/api`)
+export const getServerSideProps = async ({ locale }) => {
+  /*  const response = await fetch(`http://localhost:3001/shop/products/api`)
   const products = await response.json()
-  console.log(products.productsArr)
+  console.log(products.productsArr)*/
   return {
     props: {
-      posts: products.productsArr,
+      posts: [],
       ...(await serverSideTranslations(locale, ['common', 'header', 'form'])),
     },
   }
