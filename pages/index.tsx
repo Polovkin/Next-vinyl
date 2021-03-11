@@ -1,39 +1,45 @@
-import { MainLayout } from '../layouts/MainLayout'
 import { useTranslation } from 'next-i18next'
 import { connect } from 'react-redux'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+import { MainLayout } from '../layouts/MainLayout'
 import MainSection from '../components/sections/IndexMain/MainSection'
 import Alert from '../components/reusable/Alert/Alert'
 import NewProducts from '../components/sections/IndexNewProducts/NewProducts'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Form from '../components/reusable/Form/Form'
 
-const Homepage = ({ alert, posts: serverPosts }) => {
+import { GetServerSideProps } from 'next'
+import { Products, ProductsArray } from '../interfaces/products'
+
+interface HomepageProps {
+  alert: string | null
+  products: Products
+}
+
+const Homepage = ({ alert, products: serverPosts }: HomepageProps) => {
   const { t } = useTranslation('common')
-  const [posts, setPosts] = useState(serverPosts)
+  const [products, setProducts] = useState<Products>(serverPosts)
 
   /*useEffect(() => {
     async function load() {
       const response = await fetch('http://localhost:3001/shop/products/api')
       const json = await response.json()
-      setPosts(json)
+      setProducts(json)
     }
 
     if (!serverPosts) {
       load()
     }
-  }, [])
+  }, [])*/
 
-  if (!posts) {
-    return <p>Loading ...</p>
-  }*/
   return (
     <>
       <MainLayout>
         {alert && <Alert text={alert} />}
         <MainSection />
 
-        <NewProducts posts={posts} />
+        <NewProducts products={products} />
 
         <section className="section">
           <div className="container">
@@ -46,13 +52,13 @@ const Homepage = ({ alert, posts: serverPosts }) => {
   )
 }
 
-export const getServerSideProps = async ({ locale }) => {
-  /*  const response = await fetch(`http://localhost:3001/shop/products/api`)
-  const products = await response.json()
-  console.log(products.productsArr)*/
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  const response = await fetch(`http://localhost:3001/shop/products/api`)
+  const products: ProductsArray = await response.json()
+
   return {
     props: {
-      posts: [],
+      products: products.productsArr,
       ...(await serverSideTranslations(locale, ['common', 'header', 'form'])),
     },
   }

@@ -5,8 +5,9 @@ import classNames from 'classnames'
 import { sendForm } from '../../../store/actions'
 import { FormInputs } from '../../../interfaces/components'
 import s from './form.module.scss'
+import { FunctionComponent } from 'react'
 
-const Form = () => {
+const Form: FunctionComponent = () => {
   const { t } = useTranslation('form')
   const dispatch = useDispatch()
   const { register, handleSubmit, errors, watch } = useForm<FormInputs>()

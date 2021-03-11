@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import Card from '../../reusable/CardSimple/Card'
 import s from './new-products.module.scss'
 
-const NewProducts = ({ posts }) => {
+const NewProducts = ({ products }) => {
   const { t } = useTranslation('common')
 
   return (
@@ -22,12 +22,12 @@ const NewProducts = ({ posts }) => {
         </div>
 
         <div className={s.slider}>
-          {posts.length ? (
-            posts.map((posts, index) => (
+          {products.length ? (
+            products.map((product, index) => (
               <Card
-                name={posts.name}
-                description={posts.description}
-                image={posts.image}
+                name={product.name}
+                description={product.description}
+                image={product.image}
                 key={index}
               />
             ))
@@ -39,10 +39,5 @@ const NewProducts = ({ posts }) => {
     </section>
   )
 }
-const mapStateToProps = (state) => {
-  return {
-    products: state.shop.products,
-  }
-}
 
-export default connect(mapStateToProps, null)(NewProducts)
+export default connect(null, null)(NewProducts)

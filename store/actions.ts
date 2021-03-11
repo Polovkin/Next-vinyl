@@ -1,10 +1,10 @@
-import { SHOW_ALERT, HIDE_ALERT, SUCCESS_ERROR, SUCCESS_OK, FETCH_POSTS } from './types'
+import { SHOW_ALERT, HIDE_ALERT, FETCH_POSTS } from './types'
 
 interface simpleAction {
   type: string
 }
 
-export function showAlert(text) {
+export function showAlert(text: string) {
   return (dispatch) => {
     dispatch({
       type: SHOW_ALERT,
