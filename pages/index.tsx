@@ -52,7 +52,7 @@ const Homepage = ({ alert, products: serverPosts }: HomepageProps) => {
   )
 }
 
-export const getStaticProps: GetServerSideProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
   const response = await fetch(`http://localhost:3001/shop/products/api`)
   const products: ProductsArray = await response.json()
 
