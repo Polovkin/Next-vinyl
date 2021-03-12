@@ -14,6 +14,6 @@ module.exports = {
   },
   i18n,
   images: {
-    domains: ['localhost']
+    domains: ['localhost','admin.polova.fun']
   }
 }
